@@ -1,0 +1,39 @@
+package TCP_Socket;
+
+import java.net.*;
+import java.io.*;
+
+public class p696_16_7 {
+
+	public static void main(String[] args) {
+		try {
+			String serverIp = "127.0.0.1";
+			
+			System.out.println("서버에 연결중입니다. 서버IP : " + serverIp);
+			// make socket and request connection
+			// 서버쪽 주소(ip주소 + 7777)를 세팅해서 소켓 생성
+			Socket socket = new Socket(serverIp, 7777);
+			
+			// 소켓의 입력 스트림을 얻는다.
+			// 네트워크 패킷 정보를 받는 부분
+			InputStream in = socket.getInputStream();
+			DataInputStream dis = new DataInputStream(in);
+			
+			// 소켓으로부터 받은 데이터를 출력한다.
+			// readUTF : 실제 네트워크로 들어온 메세지를 읽는 메소드
+			System.out.println("서버로부터 받은 메세지 : " + dis.readUTF());
+			System.out.println("연결을 종료합니다.");
+			
+			// 소켓과 스트림을 닫음
+			dis.close();
+			socket.close();
+			System.out.println("연결이 종료되었습니다.");
+		} catch (ConnectException ce ) {
+			ce.printStackTrace();
+		} catch (IOException ie ) {
+			ie.printStackTrace();
+		} catch (Exception e ) {
+			e.printStackTrace();
+		}
+	}
+}

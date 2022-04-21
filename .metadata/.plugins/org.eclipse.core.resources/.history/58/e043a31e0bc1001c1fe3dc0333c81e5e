@@ -1,0 +1,5 @@
+package MultiThread;
+
+public class WorldBank implements Runnable {
+	Account acc = new Account(); // 통장
+}

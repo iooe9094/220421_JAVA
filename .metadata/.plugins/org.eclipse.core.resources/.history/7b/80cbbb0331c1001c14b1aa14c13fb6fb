@@ -1,0 +1,21 @@
+package TCP_Socket;
+
+import java.net.*;
+import java.io.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class p694_16_6 {
+
+	public static void main(String[] args) {
+		ServerSocket serverSocket = null;
+		
+		try {
+			serverSocket = new ServerSocket(7777);
+			System.out.println(getTime() + "서버가 준비되었습니다.");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

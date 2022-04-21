@@ -1,0 +1,14 @@
+package TCP_Socket;
+
+import java.net.*;
+import java.io.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class p694_16_6 {
+
+	public static void main(String[] args) {
+
+	}
+
+}

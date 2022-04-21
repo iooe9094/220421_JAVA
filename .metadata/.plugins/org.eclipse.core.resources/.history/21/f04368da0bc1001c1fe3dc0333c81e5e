@@ -1,0 +1,12 @@
+package MultiThread;
+
+public class WorldBank implements Runnable {
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	Account acc = new Account(); // 통장
+}
